@@ -21,11 +21,11 @@
       </HBox>
       <VBox id="History_Result_Container" prefHeight="53.0" prefWidth="374.0">
          <children>
-            <TextField id="historyTV">
+            <TextField fx:id="historyTV" id="historyTV">
                <VBox.margin>
                   <Insets />
                </VBox.margin></TextField>
-            <TextField id="resultTV" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="60.0">
+            <TextField fx:id="resultTV" id="resultTV" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="60.0">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin></TextField>
@@ -36,43 +36,20 @@
       </VBox>
       <HBox alignment="CENTER" prefHeight="32.0" prefWidth="374.0" styleClass="BtnRow">
          <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="C" HBox.hgrow="ALWAYS">
+            <Button id="clear" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clear" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="C" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="√" HBox.hgrow="ALWAYS">
+            <Button id="squareRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#squareRoot" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="√" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="&lt;-" HBox.hgrow="ALWAYS">
+            <Button id="backspace" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backspace" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="&lt;-" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="/" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </HBox.margin></Button>
-         </children>
-         <VBox.margin>
-            <Insets top="10.0" />
-         </VBox.margin>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="34.0" prefWidth="374.0" styleClass="BtnRow">
-         <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="7" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </HBox.margin></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="8" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </HBox.margin></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="9" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </HBox.margin></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="X" HBox.hgrow="ALWAYS">
+            <Button id="/" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#operation" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="/" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
@@ -83,19 +60,42 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="34.0" prefWidth="374.0" styleClass="BtnRow">
          <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="4">
+            <Button id="7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#number" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="7" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="5">
+            <Button id="8" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#number" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="8" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="6">
+            <Button id="9" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#number" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="9" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="+">
+            <Button id="x" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#operation" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="X" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin></Button>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="34.0" prefWidth="374.0" styleClass="BtnRow">
+         <children>
+            <Button id="4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#number" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="4">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin></Button>
+            <Button id="5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#number" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="5">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin></Button>
+            <Button id="6" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#number" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="6">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin></Button>
+            <Button id="+" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#operation" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="+">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
@@ -106,19 +106,19 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="33.0" prefWidth="374.0" styleClass="BtnRow">
          <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="1">
+            <Button id="1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#number" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="1">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="2">
+            <Button id="2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#number" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="2">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="3">
+            <Button id="3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#number" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="3">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="-">
+            <Button id="-" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#operation" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="-">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
@@ -129,22 +129,22 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="33.0" prefWidth="374.0" styleClass="BtnRow">
          <children>
-            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="00">
+            <Button id="00" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#number" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="00">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="0">
+            <Button id="0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#number" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="0">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text=".">
+            <Button id="." maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#number" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text=".">
                <padding>
                   <Insets left="10.0" right="10.0" />
                </padding>
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="=">
+            <Button id="=" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#operation" prefHeight="56.0" prefWidth="85.0" styleClass="BtnStyle" text="=">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Button>
